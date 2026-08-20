@@ -1,0 +1,27 @@
+import express from 'express' ;
+import dotenv from "dotenv" ;
+import cors from 'cors' ;
+import cookieParser from 'cookie-parser' ;
+import connectDB from './utils/db.js' ;
+import { router as userRouter } from './routes/userRoutes.js';
+dotenv.config();
+const app = express() ;
+// express.json
+app.use(express.json({limit:"100mb"}));
+//url encoded 
+app.use(express.urlencoded({limit: "100mb" , extended: true})) ;
+//cookieParser
+app.use(cookieParser())
+
+const port = process.env.PORT ;
+// one test route
+app.get("/",(req ,res)=>{
+  res.send("Homely hub server is running") ;
+
+})
+app.use("/api/v1/rent/user",userRouter) ;
+
+connectDB() ;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
