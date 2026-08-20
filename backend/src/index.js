@@ -4,6 +4,7 @@ import cors from 'cors' ;
 import cookieParser from 'cookie-parser' ;
 import connectDB from './utils/db.js' ;
 import { router as userRouter } from './routes/userRoutes.js';
+import { propertyRouter } from './routes/propertyRouter.js';
 dotenv.config();
 const app = express() ;
 // express.json
@@ -20,7 +21,7 @@ app.get("/",(req ,res)=>{
 
 })
 app.use("/api/v1/rent/user",userRouter) ;
-
+app.use("/api/v1/rent/listing",propertyRouter);
 connectDB() ;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

@@ -1,7 +1,7 @@
 //  get all properties
 //get property based on id 
 import { status } from "init";
-import { Property } from "../Models/propertModel.js";
+import { Property } from "../Models/propertyModel.js";
 import { APIFeatures } from "../utils/APIFeatures.js";
 import imagekit from "../utils/ImagekitIO.js";
 
