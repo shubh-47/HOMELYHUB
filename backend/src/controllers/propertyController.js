@@ -5,7 +5,7 @@ import { Property } from "../Models/propertyModel.js";
 import { APIFeatures } from "../utils/APIFeatures.js";
 import imagekit from "../utils/ImagekitIO.js";
 
-// get all prop[erty
+// get all property
 const getProperties = async(req ,res)=>{
   try{
 const features = new APIFeatures(Property.find() , req.querty).filter()

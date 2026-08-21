@@ -1,6 +1,6 @@
 //Address list
 import express from 'express' ;
-import { signup,login } from '../controllers/authController.js';
+import { signup,login,protect } from '../controllers/authController.js';
 
 const router = express.Router();
 router.route("/signup").post(signup);
