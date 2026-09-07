@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser' ;
 import connectDB from './utils/db.js' ;
 import { router as userRouter } from './routes/userRoutes.js';
 import { propertyRouter } from './routes/propertyRouter.js';
+import { bookingRouter } from './routes/bookingRouter.js';
 dotenv.config();
 const app = express() ;
 // express.json
@@ -22,6 +23,7 @@ app.get("/",(req ,res)=>{
 })
 app.use("/api/v1/rent/user",userRouter) ;
 app.use("/api/v1/rent/listing",propertyRouter);
+app.use("/api/v1/rent/user/booking",bookingRouter);
 connectDB() ;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

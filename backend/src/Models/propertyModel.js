@@ -127,5 +127,6 @@ propertySchema.pre("save",function(next){
   this.address.city = this.address.city.toLowerCase().replaceAll(" ","")
   next();
 })
-const Property = mongoose.model("Property",propertySchema) ;
+// const Property = mongoose.model("Property",propertySchema) ;
+const Property = mongoose.model.Property || mongoose.model("Property",propertySchema) ;
 export {Property} ;

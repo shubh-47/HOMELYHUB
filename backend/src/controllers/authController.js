@@ -76,7 +76,7 @@ next();
 
 }
 catch(error){
-res.staus(401).json({
+res.status(401).json({
   status:"fail",
   message:error.message
 })
